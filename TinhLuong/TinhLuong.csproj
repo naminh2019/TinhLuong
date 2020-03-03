@@ -32,11 +32,31 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon\IconMH.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DGV Printer">
+      <HintPath>C:\Users\namin\Desktop\DGV Printer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary">
+      <HintPath>..\packages\ExcelLibrary.1.2011.7.30\lib\ExcelLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="expertxls">
+      <HintPath>..\packages\ExpertXls.ExcelLibrary.5.0.0\lib\net40\expertxls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -61,66 +81,202 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmChamcong.cs">
+    <Compile Include="Forms\PrintCharity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChamcong.Designer.cs">
+    <Compile Include="Forms\PrintCharity.Designer.cs">
+      <DependentUpon>PrintCharity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintTimekeeping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintTimekeeping.Designer.cs">
+      <DependentUpon>PrintTimekeeping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptLatePenalty.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLatePenalty.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintSalary.Designer.cs">
+      <DependentUpon>PrintSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptTinhluong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTinhluong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptDeduct.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDeduct.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptAllowance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAllowance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\CharityMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CharityMoney.Designer.cs">
+      <DependentUpon>CharityMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Classification.cs" />
+    <Compile Include="Entities\Salary.cs" />
+    <Compile Include="Forms\Classification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Classification.Designer.cs">
+      <DependentUpon>Classification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FixedAllowance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FixedAllowance.Designer.cs">
+      <DependentUpon>FixedAllowance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExtraOvertime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExtraOvertime.Designer.cs">
+      <DependentUpon>ExtraOvertime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmChamcong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChamcong.Designer.cs">
       <DependentUpon>frmChamcong.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClassConnect.cs" />
-    <Compile Include="DSnhanvien.cs">
+    <Compile Include="Forms\TinhLuong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DSnhanvien.Designer.cs">
+    <Compile Include="Forms\TinhLuong.Designer.cs">
+      <DependentUpon>TinhLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InBangLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InBangLuong.Designer.cs">
+      <DependentUpon>InBangLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBox\frmMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox\frmMessageBox.Designer.cs">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptTimekeeping.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTimekeeping.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\ConnectionUtils.cs" />
+    <Compile Include="Forms\DSnhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DSnhanvien.Designer.cs">
       <DependentUpon>DSnhanvien.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditNV.cs">
+    <Compile Include="Forms\EditNV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditNV.Designer.cs">
+    <Compile Include="Forms\EditNV.Designer.cs">
       <DependentUpon>EditNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSelectmonth.cs">
+    <Compile Include="Forms\frmSelectmonth.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSelectmonth.Designer.cs">
+    <Compile Include="Forms\frmSelectmonth.Designer.cs">
       <DependentUpon>frmSelectmonth.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImportExcel.cs">
+    <Compile Include="Forms\ImportExcel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImportExcel.Designer.cs">
+    <Compile Include="Forms\ImportExcel.Designer.cs">
       <DependentUpon>ImportExcel.cs</DependentUpon>
     </Compile>
-    <Compile Include="LuongNhanVien.cs" />
-    <Compile Include="NhanVienHistory.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Entities\Keeptime.cs" />
+    <Compile Include="System\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SaveData.cs" />
-    <Compile Include="TotalChamCong.cs" />
-    <EmbeddedResource Include="frmChamcong.resx">
+    <Compile Include="Entities\TotalChamCong.cs" />
+    <Compile Include="Utils\ExportExcel.cs" />
+    <Compile Include="Utils\MouseEvent.cs" />
+    <EmbeddedResource Include="Forms\PrintCharity.resx">
+      <DependentUpon>PrintCharity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintTimekeeping.resx">
+      <DependentUpon>PrintTimekeeping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptLatePenalty.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLatePenalty.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintSalary.resx">
+      <DependentUpon>PrintSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptTinhluong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTinhluong.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptDeduct.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDeduct.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptAllowance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAllowance.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CharityMoney.resx">
+      <DependentUpon>CharityMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Classification.resx">
+      <DependentUpon>Classification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FixedAllowance.resx">
+      <DependentUpon>FixedAllowance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExtraOvertime.resx">
+      <DependentUpon>ExtraOvertime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmChamcong.resx">
       <DependentUpon>frmChamcong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DSnhanvien.resx">
+    <EmbeddedResource Include="Forms\DSnhanvien.resx">
       <DependentUpon>DSnhanvien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditNV.resx">
+    <EmbeddedResource Include="Forms\EditNV.resx">
       <DependentUpon>EditNV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSelectmonth.resx">
+    <EmbeddedResource Include="Forms\frmSelectmonth.resx">
       <DependentUpon>frmSelectmonth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImportExcel.resx">
+    <EmbeddedResource Include="Forms\ImportExcel.resx">
       <DependentUpon>ImportExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TinhLuong.resx">
+      <DependentUpon>TinhLuong.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBox\frmMessageBox.resx">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,8 +286,20 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
+    <Compile Include="Entities\ChamCong.cs" />
+    <EmbeddedResource Include="Forms\InBangLuong.resx">
+      <DependentUpon>InBangLuong.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptTimekeeping.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTimekeeping.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="System\packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -143,10 +311,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <None Include="System\App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
@@ -165,7 +332,7 @@
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
     <COMReference Include="VBIDE">
       <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
@@ -176,6 +343,18 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1366x768_px_galaxy_universe-669338.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon\dong ho.ico" />
+    <Content Include="Icon\IconMH.ico" />
+    <Content Include="Icon\payment.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
